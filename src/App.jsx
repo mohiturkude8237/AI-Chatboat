@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Mainchatbot from './components/chatbot/mainchatbot';
 import Home from "./components/HomePage/HomePage";
 import About from "./components/About";
+import Features from "./components/Features";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/features" element={<Features />} />
         
     
         <Route path="/chatbot" element={<Mainchatbot />} />
