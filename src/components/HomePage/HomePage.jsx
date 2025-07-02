@@ -446,9 +446,100 @@
 // export default HomePage;
 
 
+// import React, { useState } from "react";
+// import { Link, useNavigate } from "react-router-dom";
+// import { FaBars, FaTimes, FaRobot } from "react-icons/fa";
+// import Lottie from "lottie-react";
+// import chatbotAnimation from "../../assets/chatbot-animation.json";
+// import messageAnimation from "../../assets/message-animation.json";
+// import "../../Styles/HomePage.css";
+
+// const HomePage = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const navigate = useNavigate();
+
+//   const handleRedirect = () => {
+//     navigate("/chatbot");
+//   };
+
+//   return (
+//     <div className="flex flex-col min-h-screen">
+//       {/* Navbar */}
+//       <nav className="fixed top-0 left-0 w-full bg-gray-600 bg-opacity-80 backdrop-blur-md shadow-md p-4 z-50">
+//         <div className="container mx-auto flex justify-between items-center">
+//           <Link to="/" className="text-2xl font-bold flex items-center text-cyan-400">
+//             <FaRobot className="mr-2" size={25} /> Voice Assistant
+//           </Link>
+
+//           {/* Desktop Menu */}
+//           <ul className="hidden md:flex space-x-6 text-white text-lg font-bold">
+//             <li><Link to="/" className="hover:text-cyan-400">Home</Link></li>
+//             <li><Link to="/features" className="hover:text-cyan-400">About</Link></li>
+//             <li><Link to="/about" className="hover:text-cyan-400">Services</Link></li>
+//             <li><Link to="/contact" className="hover:text-cyan-400">Contact</Link></li>
+//           </ul>
+
+//           {/* Mobile Menu Button */}
+//           <button className="md:hidden text-white text-2xl" onClick={() => setIsOpen(!isOpen)}>
+//             {isOpen ? <FaTimes /> : <FaBars />}
+//           </button>
+//         </div>
+
+//         {/* Mobile Menu Dropdown */}
+//         {isOpen && (
+//           <div className="md:hidden absolute left-0 top-0 w-full h-screen bg-black bg-opacity-90 flex items-center justify-center">
+//             <ul className="space-y-6 text-white text-xl">
+//               <li><Link to="/" className="block hover:text-cyan-400" onClick={() => setIsOpen(false)}>Home</Link></li>
+//               <li><Link to="/features" className="block hover:text-cyan-400" onClick={() => setIsOpen(false)}>Features</Link></li>
+//               <li><Link to="/about" className="block hover:text-cyan-400" onClick={() => setIsOpen(false)}>About</Link></li>
+//               <li><Link to="/contact" className="block hover:text-cyan-400" onClick={() => setIsOpen(false)}>Contact</Link></li>
+//             </ul>
+//           </div>
+//         )}
+//       </nav>
+
+//       {/* HomePage Content */}
+//       <div
+//         className="flex flex-col md:flex-row items-center justify-center gap-5 px-6 w-full min-h-screen pt-16 bg-cover bg-center bg-no-repeat"
+//         style={{
+//           backgroundImage: "url('https://www.shutterstock.com/shutterstock/videos/3674310485/thumb/1.jpg?ip=x480')",
+          
+        
+//         }}
+//       >
+//         {/* Left Side - Lottie Animation */}
+//         <div className="hidden md:block w-72 md:w-96">
+//           <Lottie animationData={chatbotAnimation} loop={true} />
+//         </div>
+
+//         {/* Right Side - Text Content */}
+//         <div className=" md:text-left flex flex-col items-center md:items-start">
+//           <h1 className="text-4xl md:text-5xl font-bold text-gray-200 md:text-center md:mt-4">
+//             Welcome to the AI Voice Assistant
+//           </h1>
+//           <p className="text-lg md:text-xl text-white font-bold mt-4">
+//             Talk Smart. Experience AI Like Never Before.
+//           </p>
+//           <button
+//             onClick={handleRedirect}
+//             className="mt-5 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg text-lg"
+//           >
+//             Get Started
+//           </button>
+//           <div className="w-72 md:w-96 mt-6">
+//             <Lottie animationData={messageAnimation} loop={true} />
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default HomePage;
+
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaBars, FaTimes, FaRobot } from "react-icons/fa";
+import { FaBars, FaTimes, FaRobot, FaMicrophone, FaComments, FaBrain } from "react-icons/fa";
 import Lottie from "lottie-react";
 import chatbotAnimation from "../../assets/chatbot-animation.json";
 import messageAnimation from "../../assets/message-animation.json";
@@ -465,17 +556,17 @@ const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full bg-gray-600 bg-opacity-80 backdrop-blur-md shadow-md p-4 z-50">
+      <nav className="fixed top-0 left-0 w-full bg-gray-800 bg-opacity-80 backdrop-blur-md shadow-md p-4 z-50">
         <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold flex items-center text-cyan-400">
             <FaRobot className="mr-2" size={25} /> Voice Assistant
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-6 text-white text-lg font-bold">
+          <ul className="hidden md:flex space-x-6 text-white text-lg font-semibold">
             <li><Link to="/" className="hover:text-cyan-400">Home</Link></li>
-            <li><Link to="/features" className="hover:text-cyan-400">About</Link></li>
-            <li><Link to="/about" className="hover:text-cyan-400">Services</Link></li>
+            <li><Link to="/features" className="hover:text-cyan-400">Features</Link></li>
+            <li><Link to="/about" className="hover:text-cyan-400">About</Link></li>
             <li><Link to="/contact" className="hover:text-cyan-400">Contact</Link></li>
           </ul>
 
@@ -485,52 +576,78 @@ const HomePage = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Dropdown */}
+        {/* Mobile Dropdown */}
         {isOpen && (
-          <div className="md:hidden absolute left-0 top-0 w-full h-screen bg-black bg-opacity-90 flex items-center justify-center">
+          <div className="md:hidden absolute left-0 top-0 w-full h-screen bg-black bg-opacity-90 flex items-center justify-center z-40">
             <ul className="space-y-6 text-white text-xl">
-              <li><Link to="/" className="block hover:text-cyan-400" onClick={() => setIsOpen(false)}>Home</Link></li>
-              <li><Link to="/features" className="block hover:text-cyan-400" onClick={() => setIsOpen(false)}>Features</Link></li>
-              <li><Link to="/about" className="block hover:text-cyan-400" onClick={() => setIsOpen(false)}>About</Link></li>
-              <li><Link to="/contact" className="block hover:text-cyan-400" onClick={() => setIsOpen(false)}>Contact</Link></li>
+              <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+              <li><Link to="/features" onClick={() => setIsOpen(false)}>Features</Link></li>
+              <li><Link to="/about" onClick={() => setIsOpen(false)}>About</Link></li>
+              <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
             </ul>
           </div>
         )}
       </nav>
 
-      {/* HomePage Content */}
+      {/* Hero Section */}
       <div
-        className="flex flex-col md:flex-row items-center justify-center gap-5 px-6 w-full min-h-screen pt-16 bg-cover bg-center bg-no-repeat"
+        className="flex flex-col md:flex-row items-center justify-center gap-8 px-6 w-full min-h-screen pt-24 bg-cover bg-center relative"
         style={{
-          backgroundImage: "url('https://www.shutterstock.com/shutterstock/videos/3674310485/thumb/1.jpg?ip=x480')",
-          
-        
+          backgroundImage: "url('https://images.unsplash.com/photo-1600267165302-4a6c2d8d97b0')",
         }}
       >
-        {/* Left Side - Lottie Animation */}
-        <div className="hidden md:block w-72 md:w-96">
-          <Lottie animationData={chatbotAnimation} loop={true} />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-cyan-900/30 backdrop-blur-sm"></div>
+
+        {/* Left Animation */}
+        <div className="z-10 hidden md:block w-80 md:w-96">
+          <Lottie animationData={chatbotAnimation} loop />
         </div>
 
-        {/* Right Side - Text Content */}
-        <div className=" md:text-left flex flex-col items-center md:items-start">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-200 md:text-center md:mt-4">
-            Welcome to the AI Voice Assistant
+        {/* Right Content */}
+        <div className="z-10 text-center md:text-left flex flex-col items-center md:items-start">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white animate-pulse text-shadow">
+            Welcome to Your AI Voice Assistant
           </h1>
-          <p className="text-lg md:text-xl text-white font-bold mt-4">
-            Talk Smart. Experience AI Like Never Before.
+          <p className="text-lg md:text-xl text-gray-200 mt-4 font-medium">
+            Talk Smart. Experience AI like never before.
           </p>
           <button
             onClick={handleRedirect}
-            className="mt-5 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg text-lg"
+            className="mt-6 px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-cyan-400 text-white rounded-full text-lg font-semibold animate-bounce"
           >
             Get Started
           </button>
           <div className="w-72 md:w-96 mt-6">
-            <Lottie animationData={messageAnimation} loop={true} />
+            <Lottie animationData={messageAnimation} loop />
           </div>
         </div>
       </div>
+
+      {/* Features Section */}
+      <section className="bg-gray-100 py-14 px-6 text-center">
+        <h2 className="text-3xl font-bold mb-10 text-gray-800">Key Features</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+          <div className="bg-white shadow-lg rounded-xl p-6 hover:scale-105 transition-transform">
+            <FaMicrophone className="text-cyan-500 text-4xl mb-4 mx-auto" />
+            <h3 className="text-xl font-semibold mb-2">Voice Recognition</h3>
+            <p className="text-gray-600">Interact naturally using your voice in real-time.</p>
+          </div>
+          <div className="bg-white shadow-lg rounded-xl p-6 hover:scale-105 transition-transform">
+            <FaComments className="text-cyan-500 text-4xl mb-4 mx-auto" />
+            <h3 className="text-xl font-semibold mb-2">Smart Responses</h3>
+            <p className="text-gray-600">Get accurate replies powered by AI conversation models.</p>
+          </div>
+          <div className="bg-white shadow-lg rounded-xl p-6 hover:scale-105 transition-transform">
+            <FaBrain className="text-cyan-500 text-4xl mb-4 mx-auto" />
+            <h3 className="text-xl font-semibold mb-2">Learning System</h3>
+            <p className="text-gray-600">Adapts to user input for a personalized experience.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Scroll Indicator */}
+      <div className="text-center py-4 text-gray-500 text-sm animate-bounce">⬇ Scroll Down to Explore More</div>
     </div>
   );
 };
