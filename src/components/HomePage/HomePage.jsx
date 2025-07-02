@@ -631,7 +631,7 @@
 
 // export default HomePage;
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,NavLink } from "react-router-dom";
 import Faq from "../Faq";
 
 import {
@@ -677,13 +677,13 @@ const HomePage = () => {
               </Link>
             </li>
             <li>
-              <Link to="/features" className="hover:text-cyan-400">
-                Features
-              </Link>
+              <NavLink to="/about" className="hover:text-cyan-400">
+                About
+              </NavLink>
             </li>
             <li>
-              <Link to="/about" className="hover:text-cyan-400">
-                Pricing
+              <Link to="/features" className="hover:text-cyan-400">
+                Features
               </Link>
             </li>
             <li>
