@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Mainchatbot from './components/chatbot/mainchatbot';
-import Home from "./components/HomePage/HomePage";
+import HomePage from "./components/HomePage/HomePage";
 import About from "./components/About";
 import Features from "./components/Features";
 import Contact from "./components/Contact";
