@@ -664,17 +664,17 @@ const HomePage = () => {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-lg shadow-lg z-50">
         <div className="container mx-auto p-4 flex justify-between items-center">
-          <Link
+          <NavLink
             to="/"
             className="text-2xl font-bold flex items-center text-cyan-400"
           >
             <FaRobot className="mr-2" size={25} /> Voice Assistant
-          </Link>
+          </NavLink>
           <ul className="hidden md:flex space-x-6 text-white text-lg">
             <li>
-              <Link to="/" className="hover:text-cyan-400">
+              <NavLink to="/" className="hover:text-cyan-400">
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
               <NavLink to="/about" className="hover:text-cyan-400">
@@ -682,14 +682,14 @@ const HomePage = () => {
               </NavLink>
             </li>
             <li>
-              <Link to="/features" className="hover:text-cyan-400">
+              <NavLink to="/features" className="hover:text-cyan-400">
                 Features
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-cyan-400">
+              <NavLink to="/contact" className="hover:text-cyan-400">
                 Contact
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <button
