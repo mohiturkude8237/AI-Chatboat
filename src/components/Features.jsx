@@ -42,7 +42,7 @@ const Features = () => {
           Powerful Features of <span className="text-cyan-500">VoiceBuddy</span>
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Explore what makes our AI voice assistant smart, secure, and incredibly useful for everyday tasks.
+          Explore what makes our AI voice assistant smart, secure, and incredibly useful for everyday task.
         </p>
       </div>
 
